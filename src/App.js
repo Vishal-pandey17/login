@@ -6,10 +6,6 @@ export default function XLogin() {
   const [message, setMessage] = useState("");
 
   const handleLogin = () => {
-    if (!username || !password) {
-      setMessage("Both fields are required");
-      return;
-    }
     if (username === "user" && password === "password") {
       setMessage("Welcome, user!");
     } else {
@@ -29,10 +25,10 @@ export default function XLogin() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="w-full px-3 py-2 border rounded-lg"
-            required 
+            required = {true}
           />
         </div>
-
+        <form>
         <div className="mb-4">
           <label className="block mb-1 text-gray-700">Password</label>
           <input
@@ -40,7 +36,7 @@ export default function XLogin() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-3 py-2 border rounded-lg"
-            required
+            required = {true}
           />
         </div>
 
@@ -50,7 +46,7 @@ export default function XLogin() {
         >
           Submit
         </button>
-
+        </form>
         {message && (
           <p className="mt-4 text-center text-red-500 font-medium">{message}</p>
         )}
