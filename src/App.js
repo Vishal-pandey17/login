@@ -29,6 +29,7 @@ export default function XLogin() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="w-full px-3 py-2 border rounded-lg"
+            required 
           />
         </div>
 
@@ -39,6 +40,7 @@ export default function XLogin() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-3 py-2 border rounded-lg"
+            required
           />
         </div>
 
