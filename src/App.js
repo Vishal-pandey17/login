@@ -17,7 +17,8 @@ export default function XLogin() {
     <div className="flex flex-col items-center p-6 bg-gray-100 h-screen">
       <div className="bg-white shadow-lg rounded-lg p-6 w-80">
         <h2 className="text-xl font-bold text-center mb-4">XLogin</h2>
-
+         
+        <form>
         <div className="mb-4">
           <label className="block mb-1 text-gray-700">Username</label>
           <input
@@ -28,7 +29,6 @@ export default function XLogin() {
             required = {true}
           />
         </div>
-        <form>
         <div className="mb-4">
           <label className="block mb-1 text-gray-700">Password</label>
           <input
