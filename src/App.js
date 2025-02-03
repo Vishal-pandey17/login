@@ -5,7 +5,8 @@ export default function XLogin() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault(); 
     if (username === "user" && password === "password") {
       setMessage("Welcome, user!");
     } else {
@@ -18,7 +19,7 @@ export default function XLogin() {
       <div className="bg-white shadow-lg rounded-lg p-6 w-80">
         <h2 className="text-xl font-bold text-center mb-4">XLogin</h2>
          
-        <form>
+        <form onSubmit={handleLogin}>
         <div className="mb-4">
           <label className="block mb-1 text-gray-700">Username</label>
           <input
@@ -41,11 +42,11 @@ export default function XLogin() {
         </div>
 
         <button
-          onClick={handleLogin}
-          className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition"
-        >
-          Submit
-        </button>
+  type="submit" // Now it properly works inside the form
+  className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition"
+>
+  Submit
+</button>
         </form>
         {message && (
           <p className="mt-4 text-center text-red-500 font-medium">{message}</p>
